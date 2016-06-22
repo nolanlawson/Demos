@@ -227,10 +227,8 @@ var getBlobs = function () {
 
         if (window.URL) {
           src = window.URL.createObjectURL(blob)
-        } else {
-          if (window.webkitURL) {
-            src = window.webkitURL.createObjectURL(blob)
-          }
+        } else if (window.webkitURL) {
+          src = window.webkitURL.createObjectURL(blob)
         }
       } else {
         // audio didn't download as a blob
